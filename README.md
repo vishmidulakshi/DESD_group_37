@@ -1,6 +1,4 @@
 # desd-food-network
-Group members: Wishmi
-
 
 ## Stakeholders (Use Case 2)
 
