@@ -36,4 +36,4 @@ We will build two main functions.
 B needs the order from A. So we build A first, then B, and we get a full working flow.
 
 ### Out of scope (for now)
-Real payments (sandbox only), producers packing and sending orders, and refunds.ox only), producer-side order fulfilment, and refunds.
+Real payments (sandbox only), producers packing and sending orders, and refunds.
