@@ -1,4 +1,4 @@
-# desd-food-network
+# DESD Group 37: Bristol Food Network
 
 ## Stakeholders (Use Case 2)
 
