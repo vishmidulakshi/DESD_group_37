@@ -78,10 +78,6 @@ Payment is essential to completing the customer transaction and ensuring that th
 
 Functionality B depends on the order prepared by Functionality A. The checkout process establishes the products, quantities, producers and order details needed for payment.
 
-The group therefore proposes developing and validating checkout and order preparation first, followed by payment and order completion. Together, these functionalities cover the main customer purchase flow from basket preparation through to the outcome of payment.
-
-The final division of responsibilities, including where commission calculation takes place, will be agreed by the group and confirmed with the module team.
-
 ## Main Process Outline
 
 1. **Add items to basket:** The customer selects products from one or more producers.
