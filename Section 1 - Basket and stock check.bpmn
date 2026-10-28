@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.52.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Process_MultiVendorCheckout" name="Multi-vendor marketplace checkout" isExecutable="true">
+    <bpmn:startEvent id="Event_15y63k9" name="Customer starts an order">
+      <bpmn:outgoing>Flow_1f52oyh</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1f52oyh" sourceRef="Event_15y63k9" targetRef="Activity_04ktonn" />
+    <bpmn:userTask id="Activity_04ktonn" name="Items added to basket">
+      <bpmn:incoming>Flow_1f52oyh</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qv0hoq</bpmn:outgoing>
+      <bpmn:standardLoopCharacteristics />
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0qv0hoq" sourceRef="Activity_04ktonn" targetRef="Activity_1ah6d7s" />
+    <bpmn:serviceTask id="Activity_1ah6d7s" name="Check stock availability">
+      <bpmn:incoming>Flow_0qv0hoq</bpmn:incoming>
+      <bpmn:outgoing>Flow_062h5av</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Gateway_171nb0g" name="Item in stock?" default="Flow_19lk4ws">
+      <bpmn:incoming>Flow_062h5av</bpmn:incoming>
+      <bpmn:outgoing>Flow_18psmbb</bpmn:outgoing>
+      <bpmn:outgoing>Flow_19lk4ws</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_062h5av" sourceRef="Activity_1ah6d7s" targetRef="Gateway_171nb0g" />
+    <bpmn:sequenceFlow id="Flow_18psmbb" name="No" sourceRef="Gateway_171nb0g" targetRef="Activity_1qv9b5u" />
+    <bpmn:sequenceFlow id="Flow_19lk4ws" name="Yes" sourceRef="Gateway_171nb0g" targetRef="Activity_0e0tz08" />
+    <bpmn:endEvent id="Event_1sw5lq7" name="end (out of stock)">
+      <bpmn:incoming>Flow_0lodqf5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0lodqf5" sourceRef="Activity_1qv9b5u" targetRef="Event_1sw5lq7" />
+    <bpmn:serviceTask id="Activity_1qv9b5u" name="Notify customer &#34;Items unavailable&#34;">
+      <bpmn:incoming>Flow_18psmbb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0lodqf5</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_0e0tz08" name="Proceed to checkout and delivery options">
+      <bpmn:incoming>Flow_19lk4ws</bpmn:incoming>
+      <bpmn:outgoing>Flow_1c75ddb</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_1cm88ms" name="end (Proceed to section 2)">
+      <bpmn:incoming>Flow_1c75ddb</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1c75ddb" sourceRef="Activity_0e0tz08" targetRef="Event_1cm88ms" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_MultiVendorCheckout">
+      <bpmndi:BPMNShape id="Event_15y63k9_di" bpmnElement="Event_15y63k9">
+        <dc:Bounds x="152" y="82" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="131" y="125" width="78" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1clx3sr_di" bpmnElement="Activity_04ktonn">
+        <dc:Bounds x="240" y="60" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hax978_di" bpmnElement="Activity_1ah6d7s">
+        <dc:Bounds x="240" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_171nb0g_di" bpmnElement="Gateway_171nb0g" isMarkerVisible="true">
+        <dc:Bounds x="395" y="195" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="386" y="255" width="68" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1sw5lq7_di" bpmnElement="Event_1sw5lq7">
+        <dc:Bounds x="662" y="202" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="639" y="245" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_06a78f9_di" bpmnElement="Activity_1qv9b5u">
+        <dc:Bounds x="500" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04x3fhg_di" bpmnElement="Activity_0e0tz08">
+        <dc:Bounds x="370" y="60" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1cm88ms_di" bpmnElement="Event_1cm88ms">
+        <dc:Bounds x="522" y="82" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="501" y="125" width="79" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1f52oyh_di" bpmnElement="Flow_1f52oyh">
+        <di:waypoint x="188" y="100" />
+        <di:waypoint x="240" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qv0hoq_di" bpmnElement="Flow_0qv0hoq">
+        <di:waypoint x="290" y="140" />
+        <di:waypoint x="290" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_062h5av_di" bpmnElement="Flow_062h5av">
+        <di:waypoint x="340" y="220" />
+        <di:waypoint x="395" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18psmbb_di" bpmnElement="Flow_18psmbb">
+        <di:waypoint x="445" y="220" />
+        <di:waypoint x="500" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="465" y="202" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19lk4ws_di" bpmnElement="Flow_19lk4ws">
+        <di:waypoint x="420" y="195" />
+        <di:waypoint x="420" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="426" y="164.5" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0lodqf5_di" bpmnElement="Flow_0lodqf5">
+        <di:waypoint x="600" y="220" />
+        <di:waypoint x="662" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1c75ddb_di" bpmnElement="Flow_1c75ddb">
+        <di:waypoint x="470" y="100" />
+        <di:waypoint x="522" y="100" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
