@@ -16,7 +16,7 @@ Following successful payment, the marketplace confirms the order, updates invent
 | **Producer** | Supplies products and stock information, fulfils their part of a confirmed order, and receives order notifications and the correct attributable amount after commission. |
 | **Marketplace platform — Bristol Food Network** | Validates stock, coordinates checkout, creates and splits orders, calculates producer amounts and commission, manages payment outcomes, updates inventory and communicates with customers and producers. |
 | **Payment service** | Receives payment requests and returns payment outcomes, such as success or decline. Temporary service unavailability must also be considered. No live payment processing is intended. |
-| **Marketplace administrator or operator** | May oversee marketplace operations and support exceptions that cannot be resolved automatically, if this responsibility is included in the agreed process scope. |
+| **Marketplace administrators and operators** | May oversee marketplace operations and support exceptions that cannot be resolved automatically, if this responsibility is included in the agreed process scope. |
 
 ## Team and Roles
 
