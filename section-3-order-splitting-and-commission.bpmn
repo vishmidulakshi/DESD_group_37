@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:definitions xmlns:b="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Defs_section_3_order_splitting_and_commissio" targetNamespace="https://example.org/bristol-food-network" exporter="Camunda Web Modeler" exporterVersion="aa92d9c" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.10.0">
+  <b:process id="Process_section_3_order_splitting_and_commissio" name="Section 3 - Order Splitting and Commission" isExecutable="false">
+    <b:documentation>Proposed operational section. Input: customer-confirmed details. Handoff: marketplace order, producer-specific elements, amounts, commission and payment data.</b:documentation>
+    <b:laneSet id="Lanes_Process_section_3_order_splitting_and_commissio">
+      <b:lane id="S3P" name="Marketplace platform">
+        <b:flowNodeRef>S3Start</b:flowNodeRef>
+        <b:flowNodeRef>S3Create</b:flowNodeRef>
+        <b:flowNodeRef>S3Split</b:flowNodeRef>
+        <b:flowNodeRef>S3Amounts</b:flowNodeRef>
+        <b:flowNodeRef>S3Commission</b:flowNodeRef>
+        <b:flowNodeRef>S3PaymentData</b:flowNodeRef>
+        <b:flowNodeRef>S3Handoff</b:flowNodeRef>
+      </b:lane>
+      <b:lane id="S3Producer" name="Producer">
+        <b:flowNodeRef>S3Orders</b:flowNodeRef>
+      </b:lane>
+    </b:laneSet>
+    <b:startEvent id="S3Start" name="Confirmed order details received" />
+    <b:serviceTask id="S3Create" name="Create marketplace order" />
+    <b:serviceTask id="S3Split" name="Split order by producer" />
+    <b:serviceTask id="S3Amounts" name="Calculate amount attributable to each producer" />
+    <b:serviceTask id="S3Commission" name="Calculate marketplace 5% commission" />
+    <b:serviceTask id="S3PaymentData" name="Compile payment request and order summary" />
+    <b:endEvent id="S3Handoff" name="Order and payment data ready" />
+    <b:task id="S3Orders" name="Record producer-specific order elements" />
+    <b:sequenceFlow id="s3a" sourceRef="S3Start" targetRef="S3Create" />
+    <b:sequenceFlow id="s3b" sourceRef="S3Create" targetRef="S3Split" />
+    <b:sequenceFlow id="s3c" sourceRef="S3Split" targetRef="S3Amounts" />
+    <b:sequenceFlow id="s3d" sourceRef="S3Amounts" targetRef="S3Commission" />
+    <b:sequenceFlow id="s3e" sourceRef="S3Commission" targetRef="S3PaymentData" />
+    <b:sequenceFlow id="s3f" sourceRef="S3PaymentData" targetRef="S3Handoff" />
+    <b:sequenceFlow id="s3g" sourceRef="S3Split" targetRef="S3Orders" />
+  </b:process>
+  <bpmndi:BPMNDiagram id="Diagram_Process_section_3_order_splitting_and_commissio">
+    <bpmndi:BPMNPlane id="Plane_Process_section_3_order_splitting_and_commissio" bpmnElement="Process_section_3_order_splitting_and_commissio">
+      <bpmndi:BPMNShape id="S3Producer_di" bpmnElement="S3Producer" isHorizontal="true">
+        <dc:Bounds x="40" y="230" width="1600" height="110" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3P_di" bpmnElement="S3P" isHorizontal="true">
+        <dc:Bounds x="40" y="40" width="1600" height="190" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3Start_di" bpmnElement="S3Start">
+        <dc:Bounds x="101" y="112" width="38" height="38" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="80" y="150" width="80" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3Create_di" bpmnElement="S3Create">
+        <dc:Bounds x="217" y="95" width="165" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3Split_di" bpmnElement="S3Split">
+        <dc:Bounds x="440" y="95" width="160" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3Amounts_di" bpmnElement="S3Amounts">
+        <dc:Bounds x="662" y="95" width="195" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3Commission_di" bpmnElement="S3Commission">
+        <dc:Bounds x="907" y="95" width="185" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3PaymentData_di" bpmnElement="S3PaymentData">
+        <dc:Bounds x="1132" y="95" width="195" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3Handoff_di" bpmnElement="S3Handoff">
+        <dc:Bounds x="1391" y="112" width="38" height="38" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1377" y="150" width="67" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="S3Orders_di" bpmnElement="S3Orders">
+        <dc:Bounds x="662" y="250" width="195" height="72" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="s3a_di" bpmnElement="s3a">
+        <di:waypoint x="139" y="131" />
+        <di:waypoint x="217" y="131" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="s3b_di" bpmnElement="s3b">
+        <di:waypoint x="382" y="131" />
+        <di:waypoint x="440" y="131" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="s3c_di" bpmnElement="s3c">
+        <di:waypoint x="600" y="131" />
+        <di:waypoint x="662" y="131" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="s3d_di" bpmnElement="s3d">
+        <di:waypoint x="857" y="131" />
+        <di:waypoint x="907" y="131" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="s3e_di" bpmnElement="s3e">
+        <di:waypoint x="1092" y="131" />
+        <di:waypoint x="1132" y="131" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="s3f_di" bpmnElement="s3f">
+        <di:waypoint x="1327" y="131" />
+        <di:waypoint x="1391" y="131" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="s3g_di" bpmnElement="s3g">
+        <di:waypoint x="600" y="131" />
+        <di:waypoint x="640" y="131" />
+        <di:waypoint x="640" y="286" />
+        <di:waypoint x="662" y="286" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</b:definitions>
