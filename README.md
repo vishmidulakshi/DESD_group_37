@@ -110,7 +110,7 @@ The final division of responsibilities, including where commission calculation t
 - Relevant BPMN pools, lanes, tasks, gateways, events, message flows and exception paths.
 - Process data and business logic required for the agreed workflows.
 
-## Out of Scope Unless Agreed Later
+## Out of Scope
 
 - Live payment processing or handling real payment-card data.
 - Building the entire marketplace or implementing all use cases in the case study.
