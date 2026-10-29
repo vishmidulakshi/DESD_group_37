@@ -23,7 +23,7 @@ Following successful payment, the marketplace confirms the order, updates invent
 | Member | Role | Main responsibilities |
 |---|---|---|
 | **Mohamed** | **Project Manager and Integration Lead** | Coordinate sprints and meetings; maintain the sprint plan, backlog, priorities and task assignments; monitor progress and dependencies; coordinate reviews and demonstrations; support integration and ensure that contributions and project records are accurate. |
-| **Dulakshi** | **Requirements and Strategic Process Analyst** | Analyse the case study and selected use case; document requirements and process boundaries; identify major enterprise processes, actors and interactions; lead the strategic BPMN model. |
+| **Wishmi** | **Requirements and Strategic Process Analyst** | Analyse the case study and selected use case; document requirements and process boundaries; identify major enterprise processes, actors and interactions; lead the strategic BPMN model. |
 | **Nacer** | **Stakeholder and i* Modelling Lead** | Identify stakeholders, goals, softgoals, tasks, resources and dependencies; lead the i* Strategic Dependency (SD) and Strategic Rationale (SR) models; ensure that stakeholder analysis informs process design. |
 | **Lin** | **Operational BPMN and Camunda Lead** | Coordinate detailed operational BPMN modelling; lead Camunda implementation; define user tasks, forms, service tasks, variables, gateways and exception handling; support end-to-end demonstrations. |
 
