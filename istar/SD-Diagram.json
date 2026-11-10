@@ -156,7 +156,7 @@
     },
     {
       "id": "9cce4dab-e912-4efe-af92-d4970206bbe5",
-      "text": "48h Order Notification",
+      "text": "Order Notification",
       "type": "istar.Resource",
       "x": 519,
       "y": 382,
@@ -192,7 +192,7 @@
     },
     {
       "id": "1d2144b5-fae9-457a-9fb6-d0b18290e07c",
-      "text": "Confirm Order",
+      "text": "Review and Confirm Order",
       "type": "istar.Task",
       "x": 220,
       "y": 240,
@@ -578,7 +578,7 @@
   },
   "tool": "pistar.2.1.0",
   "istar": "2.0",
-  "saveDate": "Tue, 10 Nov 2026 02:40:11 GMT",
+  "saveDate": "Tue, 10 Nov 2026 03:53:30 GMT",
   "diagram": {
     "width": 1053,
     "height": 860,
