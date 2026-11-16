@@ -43,7 +43,7 @@ This document shows that every detailed operational task can be traced back to a
 | A12 | Multi-vendor order placed | Goal | "Split order by producer"; Producer lane "Record producer-specific order elements" | Service task "Split order by producer" | Job type `split-order` |
 | A13 | Review and Confirm Order | Task | "Review order and pay (sandbox)" (the review part; payment is in B) | User task "Review and confirm order"; gateway "Order confirmed?"; end "Order cancelled by customer" (added operational detail) | Form `review-and-confirm-order`; variable `orderConfirmed` |
 
-## 4. Operational BPMN B – Payment and Outcome (Lin)
+## 4. Operational BPMN B – Payment and Outcome 
 
 Rows below use the element names visible in Lin's diagram. Lin to confirm and add Camunda details.
 
