@@ -47,16 +47,16 @@ The selected use case is divided into two connected major functionalities.
 
 - Allows the customer to review their basket.
 - Checks that every selected product is available in the requested quantity.
-- Informs the customer when stock is unavailable or insufficient and allows the basket to be amended.
+- Informs the customer when stock is unavailable or insufficient and allows the basket to be amended or cancelled.
 - Identifies the producers involved in the order.
-- Determines the applicable delivery or collection arrangements.
+- Determines the applicable delivery or collection arrangements, that has a 48 hour time slot for collections.
 - Presents the order for customer review and confirmation.
 - Creates the overall marketplace order.
-- Splits the order into producer-specific order elements.
+- Splits the order into producer-specific order elements ready for payment.
 
 **Why we chose it**
 
-Checkout is essential because customers need a way to purchase products from the marketplace. Multi-vendor orders introduce additional complexity because one basket can contain products from several producers. The process must validate availability and organise the order correctly before payment can be completed.
+Checkout is essential because customers need a way to purchase products from the marketplace. Multi-vendor orders introduce additional complexity because one basket can contain products from several producers. The process must validate availability, collection time rule (48-hour policy), and organise the order correctly before payment can be completed.
 
 ### B. Payment and Order Completion
 
@@ -67,7 +67,7 @@ Checkout is essential because customers need a way to purchase products from the
 - Handles successful payments, declined payments and temporary service unavailability as distinct outcomes.
 - Provides an appropriate retry, recovery or cancellation path where required.
 - Confirms the order after successful payment.
-- Updates inventory and notifies the relevant producers.
+- Updates inventory and notifies the relevant producers so they can prepare and fulfil the order.
 - Informs the customer when payment cannot be completed.
 
 **Why we chose it**
@@ -80,14 +80,14 @@ Functionality B depends on the order prepared by Functionality A. The checkout p
 
 ## Main Process Outline
 
-1. **Add items to basket:** The customer selects products from one or more producers.
+1. **Add items to basket:** Producers maintain product stock information, while the customer adds items from one or more producers and reviews their basket.
 2. **Check stock:** The marketplace checks whether all selected products remain available in the requested quantities.
 3. **Handle stock problems:** If an item is unavailable or insufficient, the customer is informed and can amend the basket.
-4. **Choose delivery or collection:** The customer selects an available arrangement for the order.
+4. **Choose delivery or collection:** The customer selects an available arrangement for the order, were Delivery requires entering a delivery address (notifying the customer and ending if unavailable), Collection requires a time slot at least 48 hours ahead, which the platform coordinates and confirms with each producer.
 5. **Review and confirm:** The customer reviews the prepared order and confirms the purchase.
 6. **Create and split order:** The marketplace creates the overall order and its producer-specific order elements.
 7. **Calculate amounts and commission:** The marketplace determines the payment amount, each producer's attributable amount and the 5% commission according to the agreed rules.
-8. **Process payment:** The marketplace submits a request to the sandbox or simulated payment service.
+8. **Process payment:** The marketplace submits a request to the sandbox payment service.
 9. **Handle payment outcomes:** Successful payment proceeds to order completion. A declined payment follows the agreed retry or cancellation path. Temporary service unavailability follows a suitable exception or recovery path.
 10. **Complete order:** Following successful payment, the marketplace confirms the order, updates inventory and notifies the relevant producers.
 
@@ -100,8 +100,8 @@ Functionality B depends on the order prepared by Functionality A. The checkout p
 - Customer review and order confirmation.
 - Overall marketplace order creation and producer-specific order splitting.
 - Calculation of producer amounts and the 5% marketplace commission.
-- Sandbox or simulated payment processing.
-- Payment success, decline, retry and service-unavailability paths.
+- Sandbox payment processing (success, decline, service-unavailability, and customer retry paths).
+- administrator oversight and logging of payment service unavailability exceptions.
 - Order confirmation, inventory updates and producer notifications after successful payment.
 - Relevant BPMN pools, lanes, tasks, gateways, events, message flows and exception paths.
 - Process data and business logic required for the agreed workflows.
@@ -154,7 +154,7 @@ The planned modelling and implementation work includes:
 
 ## Open Decisions
 
-- Confirm the two major functionalities and their boundaries with the module team.
+- Confirm the two major functionalities and their boundaries.
 - Confirm the final allocation of responsibilities among group members.
 - Agree where the 5% commission is calculated and which charges are included in the calculation.
 - Agree how payment-service unavailability, retry limits and recovery should behave.
