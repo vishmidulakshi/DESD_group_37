@@ -12,7 +12,7 @@ This document shows that every detailed operational task can be traced back to a
 |---|---|---|
 | i* Strategic Dependency (SD) | Nacer | `istar/SD-Diagram.svg` and `istar/SD-Diagram.json` |
 | i* Strategic Rationale (SR) | Nacer | 
-| Strategic BPMN (Use Case 2 master) | Wishmi (admin exception lane added by Mohamed) | `diagrams/strategic/Strategic_BPMN.png` and `diagrams/strategic/Strategic_BPMN.bpmn` (final version). Earlier version: `Final Strategic BPMN-5.png` / `Final Strategic BPMN.bpmn` |
+| Strategic BPMN (Use Case 2 master) | Wishmi (admin exception lane added by Mohamed) | `diagrams/strategic/Strategic_BPMN.png` and `diagrams/strategic/Strategic_BPMN.bpmn` (final version).  |
 | Operational BPMN A – Checkout and Order Preparation | Wishmi | `diagrams/Operational/Operational BPMN A - Checkout and Order Preparation.bpmn` and `...Preparation-3.png` |
 | Operational BPMN B – Payment and Outcome | Lin | `diagrams/Operational/Operational BPMN model B, Payment and Outcome` (.bpmn and .png; check exact names in the repo) |
 
