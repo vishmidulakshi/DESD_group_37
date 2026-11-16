@@ -11,7 +11,7 @@ This document shows that every detailed operational task can be traced back to a
 | Model | Owner | File |
 |---|---|---|
 | i* Strategic Dependency (SD) | Nacer | `istar/SD-Diagram.svg` and `istar/SD-Diagram.json` |
-| i* Strategic Rationale (SR) | Nacer | *Not found in the repo yet (`istar/` holds only the SD files). Nacer to confirm where the SR is.* |
+| i* Strategic Rationale (SR) | Nacer | 
 | Strategic BPMN (Use Case 2 master) | Wishmi (admin exception lane added by Mohamed) | `diagrams/strategic/Strategic_BPMN.png` and `diagrams/strategic/Strategic_BPMN.bpmn` (final version). Earlier version: `Final Strategic BPMN-5.png` / `Final Strategic BPMN.bpmn` |
 | Operational BPMN A – Checkout and Order Preparation | Wishmi | `diagrams/Operational/Operational BPMN A - Checkout and Order Preparation.bpmn` and `...Preparation-3.png` |
 | Operational BPMN B – Payment and Outcome | Lin | `diagrams/Operational/Operational BPMN model B, Payment and Outcome` (.bpmn and .png; check exact names in the repo) |
