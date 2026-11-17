@@ -15,7 +15,7 @@ This document shows that every detailed operational task can be traced back to a
 | Operational BPMN A – Checkout and Order Preparation | Wishmi | `diagrams/Operational/Operational BPMN A - Checkout and Order Preparation.bpmn` and `...Preparation-3.png` |
 | Operational BPMN B – Payment and Outcome | Lin | `diagrams/Operational/Operational BPMN model B, Payment and Outcome` (.bpmn and .png; check exact names in the repo) |
 
-## 2. i* element types (legend)
+## 2. i* element types 
 
 | Shape | Meaning |
 |---|---|
