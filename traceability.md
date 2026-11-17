@@ -68,11 +68,3 @@ Rows below use the element names visible in Lin's diagram. Lin to confirm and ad
 
 Variables passed from A to B (proposed, to confirm with Lin): `orderId`, `producerOrders`, `orderTotal`.
 
-## 6. Notes and open items
-
-- **Gap B10:** the README puts "administrator oversight and logging of payment service unavailability exceptions" in scope, and the strategic BPMN and SD (Support Exceptions) include it, but Operational B has no admin lane or logging task yet.
-- Only the i* SD (actors and dependencies) is traced here. The repo has no separate SR file yet. If Nacer's SR exists, add the internal goals and tasks of the Platform actor as extra columns.
-- Operational-only details (A5, parts of A4 and A13) are marked as added detail, because the operational models are more detailed than the strategic one.
-- Producer stock updates ("Update product stock information") appear in the strategic model only. Standalone producer inventory management is out of scope for the operational models (see README).
-- Out of scope (see README): live payments, refunds. Payments are sandbox only.
-- Operational BPMN A was deployed to the UWE Camunda cluster ("Diagram deployed!" screenshot in the repo). Starting instances needs run permission, which is not available on the shared cluster.
