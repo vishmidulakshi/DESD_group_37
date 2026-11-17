@@ -47,7 +47,6 @@ This document shows that every detailed operational task can be traced back to a
 
 ## 4. Operational BPMN B – Payment and Outcome 
 
-Rows below use the element names visible in Lin's diagram. Lin to confirm and add Camunda details.
 
 | # | i* element (SD) | i* type | Strategic BPMN element | Operational BPMN B element |
 |---|---|---|---|---|
@@ -60,7 +59,8 @@ Rows below use the element names visible in Lin's diagram. Lin to confirm and ad
 | B7 | Producer paid correct share | Goal | "Calculate amount attributable to each producer" | "Calculate producer share" |
 | B8 | Order Notification | Resource | "Confirm marketplace order (post-payment)"; "Update inventory"; "Notify relevant producers" | "Confirm marketplace order"; "Update inventory"; "Notify relevant producers" |
 | B9 | Multi-vendor order placed | Goal | End "Order Complete"; Producer lane "Prepare and fulfil order" / "Order fulfilled" | End "Order complete"; Producer pool "Prepare and fulfil order" |
-| B10 | Support Exceptions | Task | Admin lane "Oversee & log service exception" → end "Exception logged" | **Not yet modelled in B (gap, to agree with Lin)** |
+| B10 | Support Exceptions | Task | Admin lane "Oversee & log service exception" → end "Exception logged" |
+
 
 ## 5. Handoff between A and B
 
