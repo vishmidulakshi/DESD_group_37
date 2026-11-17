@@ -1,7 +1,10 @@
 # Traceability: i* → Strategic BPMN → Operational BPMN
 
 **Project:** Bristol Food Network – Use Case 2: Customer Multi-Vendor Order, Checkout and Payment
-**Module:** DESD UFCFTR-30-3 · **Group 37** · **Sprint 2**
+
+**Module:** DESD UFCFTR-30-3 · 
+      
+**Group 37** · **Sprint 2**
 
 ## 1. Purpose
 
